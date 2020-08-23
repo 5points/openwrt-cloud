@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: openwrt-lean-x86_64
 
 on:
   repository_dispatch:
@@ -19,8 +19,8 @@ on:
       - main
     paths:
       - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
+  schedule:
+    - cron: 52 23 * * 1
 #  watch:
 #    types: started
 
@@ -31,7 +31,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  SSH_ACTIONS: false
+  SSH_ACTIONS: ture
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
