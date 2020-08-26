@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Openwrt-lean-x86_64-n2807'
+name: Openwrt-lean-x86_64-n2807
 
 on:
   repository_dispatch:
@@ -18,7 +18,7 @@ on:
     branches:
       - main
     paths:
-      - '.config-N2807
+      - '.config-N2807'
 #  schedule:
 #    - cron: 52 23 * * 1
 #  watch:
