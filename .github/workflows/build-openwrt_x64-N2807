@@ -18,17 +18,17 @@ on:
     branches:
       - main
     paths:
-      - '.config-N2807-1'
+      - 'N2807-OP.config'
 #  schedule:
 #    - cron: 52 23 * * 1
 #  watch:
 #    types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/openwrt
-  REPO_BRANCH: lede-17.01
+  REPO_URL: https://github.com/project-openwrt/openwrt
+  REPO_BRANCH: openwrt-18.06-k5.4
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config-N2807-1
+  CONFIG_FILE: N2807-OP.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: false
