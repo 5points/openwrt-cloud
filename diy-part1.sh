@@ -21,3 +21,5 @@ git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/l
 git clone https://github.com/rosywrt/luci-theme-rosy.git package/lean/luci-theme-rosy
 git clone https://github.com/jefferymvp/luci-app-koolproxyR.git package/lean/luci-app-koolproxyR
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
+git clone https://github.com/ximliu/luci-app-smartinfo.git package/lean/luci-app-smartinfo
+git clone https://github.com/rufengsuixing/luci-app-onliner.git package/lean/luci-app-onliner.git
