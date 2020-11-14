@@ -17,7 +17,7 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i '$a src-git lienol https://github.com/lienol/openwrt-package' feeds.conf.default
 
 # Add a plugin and theme
-#git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial
+git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial
 git clone https://github.com/esirplayground/luci-theme-atmaterial-ColorIcon.git package/lean/luci-theme-atmaterial-ColorIcon
 git clone https://github.com/rosywrt/luci-theme-rosy.git package/lean/luci-theme-rosy
 git clone https://github.com/jefferymvp/luci-app-koolproxyR.git package/lean/luci-app-koolproxyR
