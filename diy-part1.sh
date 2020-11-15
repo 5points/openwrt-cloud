@@ -22,8 +22,8 @@ git clone https://github.com/esirplayground/luci-theme-atmaterial-ColorIcon.git 
 git clone https://github.com/rosywrt/luci-theme-rosy.git package/lean/luci-theme-rosy
 git clone https://github.com/jefferymvp/luci-app-koolproxyR.git package/lean/luci-app-koolproxyR
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
-git clone https://github.com/rufengsuixing/luci-app-onliner.git package/lean/luci-app-onliner.git
-git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff.git
+git clone https://github.com/rufengsuixing/luci-app-onliner.git package/lean/luci-app-onliner
+git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff
 
 # Add a Smartinfo to plugin
 svn co https://github.com/KFERMercer/OpenWrt/tree/master/package/kferm/luci-app-smartinfo package/lean/luci-app-smartinfo
