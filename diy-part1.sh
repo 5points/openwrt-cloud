@@ -24,3 +24,4 @@ git clone https://github.com/jefferymvp/luci-app-koolproxyR.git package/lean/luc
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
 git clone https://github.com/ximliu/luci-app-smartinfo.git package/lean/luci-app-smartinfo
 git clone https://github.com/rufengsuixing/luci-app-onliner.git package/lean/luci-app-onliner.git
+git clone https://github.com/esirplayground/luci-app-poweroff.git /package/lean/luci-app-poweroff.git
