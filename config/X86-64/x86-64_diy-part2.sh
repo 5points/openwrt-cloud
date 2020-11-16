@@ -17,7 +17,7 @@
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/collections/luci/Makefile
 
 # Modify the word to 'Luci-app-poweroff'
-sed -i 's/"吹灯拔蜡，关机回家"/"正在关闭机器..."/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-sed -i 's/"关机，走你~"/"关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-sed -i 's/"设备有点懵，要等一下..."/"请稍候..."/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-sed -i 's/"正在关机，说啥也不好使了..."/"正在关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
+sed -i 's/"吹灯拔蜡，关机回家"/"安全关机，某些机器不能完全断电，关机后只能通过手工重新启动。"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
+sed -i 's/"关机，走你~"/"执行关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
+sed -i 's/"设备有点懵，要等一下..."/"正在关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
+sed -i 's/"正在关机，说啥也不好使了..."/"请稍候..."/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
