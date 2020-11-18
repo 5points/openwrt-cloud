@@ -28,6 +28,6 @@ git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/l
 # Add a Smartinfo to plugin
 pushd package/
 git clone https://github.com/KFERMercer/OpenWrt.git ~/package/kferm/luci-app-smartinfo
-cp -r package/kferm/luci-app-smartinfo "../lean"
+cp -r ../kferm/luci-app-smartinfo "../lean"
 popd
 # git clone https://github.com/ximliu/luci-app-smartinfo.git package/lean/luci-app-smartinfo
