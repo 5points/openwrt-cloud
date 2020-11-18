@@ -26,7 +26,7 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git package/lean/luc
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff
 
 # Add a Smartinfo to plugin
-svn co https://github.com/KFERMercer/OpenWrt/branches/master/package/kferm/luci-app-smartinfo package/lean/luci-app-smartinfo
+svn co https://github.com/KFERMercer/trunk/package/kferm/luci-app-smartinfo package/lean/luci-app-smartinfo
 # git clone https://github.com/KFERMercer/OpenWrt.git ~/package/kferm/luci-app-smartinfo
 # cp /home/runner/package/kferm/luci-app-smartinfo /home/runner/package/lean
 # git clone https://github.com/ximliu/luci-app-smartinfo.git package/lean/luci-app-smartinfo
