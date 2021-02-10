@@ -25,7 +25,8 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean
 git clone https://github.com/rufengsuixing/luci-app-onliner.git package/lean/luci-app-onliner
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
-svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman ../luci-app-dockerman
+svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman ../package/lean/luci-app-dockerman
+git clone --depth=1 https://github.com/KFERMercer/OpenWrt/tree/master/package/kferm/luci-app-smartinfo
 
 # Add a Smartinfo to plugin
 # pushd package/lean
