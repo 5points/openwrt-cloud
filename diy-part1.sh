@@ -31,7 +31,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt
 git clone https://github.com/iamaluckyguy/luci-app-smartinfo.git package/lean/luci-app-smartinfo
 
 # Add luci-app-dockerman
-rm -rf ../lean/luci-app-docker
+rm -rf ../package/lean/luci-app-docker
 git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
