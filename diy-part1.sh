@@ -9,12 +9,32 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
-
 # Uncomment a feed source
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-
+# sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+#
 # Add a feed source
-sed -i '$a src-git lienol https://github.com/lienol/openwrt-package' feeds.conf.default
+# sed -i '$a src-git lienol https://github.com/lienol/openwrt-package' feeds.conf.default
+
+# Add a shadowsocks-r_plus
+pushd package/lean
+git clone --depth=1 https://github.com/fw876/helloworld
+
+# Add Lienol's Packages
+git clone --depth=1 https://github.com/Lienol/openwrt-package
+rm -rf ../lean/luci-app-kodexplorer
+
+# Add luci-app-dockerman
+rm -rf ../lean/luci-app-docker
+git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
+git clone --depth=1 https://github.com/lisaac/luci-lib-docker
+
+
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+
+# Add a Smartinfo to plugin
+svn co https://github.com/KFERMercer/OpenWrt/trunk/package/kferm/luci-app-smartinfo
+popd
 
 # Add a plugin and theme
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial
@@ -28,12 +48,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt
 # git clone https://github.com/jefferymvp/luci-app-koolproxyR.git package/lean/luci-app-koolproxyR
 
 # add luci-app-smartinfo
-git clone https://github.com/iamaluckyguy/luci-app-smartinfo.git package/lean/luci-app-smartinfo
-
-# Add luci-app-dockerman
-rm -rf ../package/lean/luci-app-docker
-git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
-git clone --depth=1 https://github.com/lisaac/luci-lib-docker
+# git clone https://github.com/iamaluckyguy/luci-app-smartinfo.git package/lean/luci-app-smartinfo
 
 # Add a Smartinfo to plugin
 # pushd package/lean
