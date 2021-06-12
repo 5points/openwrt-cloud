@@ -8,8 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Openwrt-openwrt-x86_64-n2807
-
+name: Openwrt-n2807-x64
 on:
   repository_dispatch:
   workflow_dispatch:
