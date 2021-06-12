@@ -51,3 +51,13 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
 popd
 
+# 总是拉取官方golang版本，避免xray&v2ray编译错误 (https://github.com/Ljzkirito/Actions-Lean-RM2100/blob/main/diy-part2.sh)
+pushd feeds/packages/lang
+rm -fr golang && svn co https://github.com/openwrt/packages/trunk/lang/golang
+popd
+
+# 更新miniupnp版本
+rm -fr feeds/packages/net/miniupnpd
+svn co https://github.com/Ljzkirito/openwrt-packages/trunk/miniupnpd feeds/packages/net/miniupnpd
+rm -fr feeds/luci/applications/luci-app-upnp
+svn co https://github.com/Ljzkirito/openwrt-packages/trunk/luci-app-upnp feeds/luci/applications/luci-app-upnp
