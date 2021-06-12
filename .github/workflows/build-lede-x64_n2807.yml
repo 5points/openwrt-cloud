@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Openwrt-lean-x86_64-n2807
+name: lean-n2807-x64
 
 on:
   repository_dispatch:
