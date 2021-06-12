@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Openwrt-lean-x86_64-test
+name: Lean-test-x86_64
 
 on:
   repository_dispatch:
