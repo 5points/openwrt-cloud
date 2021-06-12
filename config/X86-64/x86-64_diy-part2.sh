@@ -22,19 +22,8 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 # Modify default Luci-Theme
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/collections/luci/Makefile
 
-# 总是拉取官方golang版本，避免xray&v2ray编译错误 (https://github.com/Ljzkirito/Actions-Lean-RM2100/blob/main/diy-part2.sh)
-pushd feeds/packages/lang
-rm -fr golang && svn co https://github.com/openwrt/packages/trunk/lang/golang
-popd
-
 # Modify the word to 'Luci-app-poweroff'
 sed -i 's/"吹灯拔蜡，关机回家"/"安全关机，某些机器不能完全断电，关机后只能通过手工重新启动。"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
 sed -i 's/"关机，走你~"/"执行关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
 sed -i 's/"设备有点懵，要等一下..."/"正在关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
 sed -i 's/"正在关机，说啥也不好使了..."/"请稍候..."/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-
-# 更新miniupnp版本
-rm -fr feeds/packages/net/miniupnpd
-svn co https://github.com/Ljzkirito/openwrt-packages/trunk/miniupnpd feeds/packages/net/miniupnpd
-rm -fr feeds/luci/applications/luci-app-upnp
-svn co https://github.com/Ljzkirito/openwrt-packages/trunk/luci-app-upnp feeds/luci/applications/luci-app-upnp
