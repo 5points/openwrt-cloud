@@ -62,3 +62,37 @@ rm -fr feeds/packages/net/miniupnpd
 svn co https://github.com/Ljzkirito/openwrt-packages/trunk/miniupnpd feeds/packages/net/miniupnpd
 rm -fr feeds/luci/applications/luci-app-upnp
 svn co https://github.com/Ljzkirito/openwrt-packages/trunk/luci-app-upnp feeds/luci/applications/luci-app-upnp
+
+# Download-Custom-feeds (Download Lean/Packages&Luci) Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
+mkdir customfeeds
+git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
+git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
+
+# Hook-feeds  Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
+pushd customfeeds
+mkdir temp
+git clone --depth=1 https://github.com/immortalwrt/packages -b openwrt-18.06 temp/packages
+git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06 temp/luci
+
+# Add netdata
+rm -rf packages/admin/netdata
+rm -rf ../package/lean/luci-app-netdata
+cp -r temp/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
+cp -r temp/packages/admin/netdata packages/admin/netdata
+
+# Add luci-app-smartdns
+cp -r temp/luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
+cp -r temp/packages/net/smartdns packages/net/smartdns
+popd
+
+# Set to local feeds
+pushd customfeeds/packages
+export packages_feed="$(pwd)"
+popd
+pushd customfeeds/luci
+export luci_feed="$(pwd)"
+popd
+sed -i '/src-git packages/d' feeds.conf.default
+echo "src-link packages $packages_feed" >> feeds.conf.default
+sed -i '/src-git luci/d' feeds.conf.default
+echo "src-link luci $luci_feed" >> feeds.conf.default
