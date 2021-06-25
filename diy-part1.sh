@@ -51,13 +51,6 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
 popd
 
-# Add Smartdns # Add luci-app-smartdns
-mkdir -p feeds/packages/net/smartdns
-git clone https://github.com/pymumu/openwrt-smartdns.git feeds/packages/net/smartdns
-
-mkdir -p feeds/luci/applications/luci-app-smartdns
-git clone --depth=1 https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
-
 # 总是拉取官方golang版本，避免xray&v2ray编译错误 (https://github.com/Ljzkirito/Actions-Lean-RM2100/blob/main/diy-part2.sh)
 mkdir -p feeds/packages/lang
 pushd feeds/packages/lang
