@@ -25,7 +25,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/col
 # Modify Default Network Settings Thanks:https://github.com/opalhair/OpenWrt-x86_64-firmware-2/blob/master/diy-part1.sh
 echo 'Custom settings'
 
-sed -i '$i uci set network.lan.ifname="eth0 eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.lan.ifname="eth0 eth1 eth2"' package/lean/default-settings/files/zzz-default-settings
 sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
 
 # Modify the word to 'Luci-app-poweroff'
