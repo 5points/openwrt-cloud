@@ -15,6 +15,15 @@
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/lienol/openwrt-package' feeds.conf.default
 
+# Settings Buildroot to openwrt #https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/.github/workflows/build-x86_generic-lean-openwrt.yml
+echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
+echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
+
+# Download-Custom-feeds (Download Lean/Packages&Luci) Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
+mkdir customfeeds
+git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
+git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
+
 # Add a shadowsocks-r_plus
 pushd package/lean
 git clone --depth=1 https://github.com/fw876/helloworld
@@ -62,11 +71,6 @@ rm -fr feeds/packages/net/miniupnpd
 svn co https://github.com/Ljzkirito/openwrt-packages/trunk/miniupnpd feeds/packages/net/miniupnpd
 rm -fr feeds/luci/applications/luci-app-upnp
 svn co https://github.com/Ljzkirito/openwrt-packages/trunk/luci-app-upnp feeds/luci/applications/luci-app-upnp
-
-# Download-Custom-feeds (Download Lean/Packages&Luci) Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
-mkdir customfeeds
-git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
-git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
 
 # Hook-feeds  Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
 pushd customfeeds
