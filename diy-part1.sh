@@ -15,14 +15,16 @@
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/lienol/openwrt-package' feeds.conf.default
 
+# # # # # #
 # Settings Buildroot to openwrt #https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/.github/workflows/build-x86_generic-lean-openwrt.yml
-echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
-echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
+# echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
+# echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
 
 # Download-Custom-feeds (Download Lean/Packages&Luci) Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
-mkdir customfeeds
-git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
-git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
+# mkdir customfeeds
+# git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
+# it clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
+# # # # # #
 
 # Add a shadowsocks-r_plus
 pushd package/lean
@@ -100,4 +102,4 @@ sed -i '/src-git packages/d' feeds.conf.default
 echo "src-link packages $packages_feed" >> feeds.conf.default
 sed -i '/src-git luci/d' feeds.conf.default
 echo "src-link luci $luci_feed" >> feeds.conf.default
-./scripts/feeds update -a
+# ./scripts/feeds update -a
