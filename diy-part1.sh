@@ -15,7 +15,6 @@
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/lienol/openwrt-package' feeds.conf.default
 
-# # # # # #
 # Settings Buildroot to openwrt #https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/.github/workflows/build-x86_generic-lean-openwrt.yml
 # echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
 # echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
@@ -29,8 +28,8 @@ git clone --depth=1 https://github.com/Lienol/openwrt-package
 rm -rf ../lean/luci-app-kodexplorer
 
 # Add luci-app-dockerman
-# rm -rf ../lean/luci-app-docker
-rm -rf ../lean/luci-lib-docker
+rm -rf ../lean/luci-app-docker
+# rm -rf ../lean/luci-lib-docker
 git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
