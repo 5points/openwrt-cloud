@@ -29,7 +29,7 @@ rm -rf ../lean/luci-app-kodexplorer
 
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
-# rm -rf ../lean/luci-lib-docker
+rm -rf ../lean/luci-lib-docker
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
