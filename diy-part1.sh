@@ -29,7 +29,6 @@ rm -rf ../lean/luci-app-kodexplorer
 
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
-rm -rf ../lean/luci-lib-docker
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
@@ -38,6 +37,9 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 # Add a Smartinfo to plugin
 svn co https://github.com/KFERMercer/OpenWrt/trunk/package/kferm/luci-app-smartinfo
+
+# Add OpenAppFilter
+git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
@@ -53,6 +55,12 @@ git clone https://github.com/project-lede/luci-app-godproxy.git
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
+
+# theme source from https://github.com/kenzok8/openwrt-packages
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomcat
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentomato
+
 popd
 
 # 总是拉取官方golang版本，避免xray&v2ray编译错误 (https://github.com/Ljzkirito/Actions-Lean-RM2100/blob/main/diy-part2.sh)
