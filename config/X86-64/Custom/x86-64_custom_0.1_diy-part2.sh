@@ -26,6 +26,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/col
 echo 'Custom settings'
 
 sed -i '$i uci set network.lan.ifname="eth0 eth1 eth2"' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
 sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
 
 # Modify the word to 'Luci-app-poweroff'
