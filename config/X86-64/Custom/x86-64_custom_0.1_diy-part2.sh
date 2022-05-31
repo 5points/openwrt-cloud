@@ -36,6 +36,11 @@ sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.
 # Modify the word to 'luci-app-ttyd'
 sed -i 's/TTYD 终端/Terminal/g' feeds/luci/applications/luci-app-ttyd/po/zh-cn/terminal.po
 
+# Modify the word to 'luci-app-ikoolproxy'
+sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/controller/*.lua
+sed -i 's/iKoolProxy滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/model/cbi/koolproxy/*.lua
+sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/view/koolproxy/*.htm
+
 # Modify the word to 'luci-app-zerotier'
 sed -i 's/firstchild(), "VPN"/firstchild(), "Journey Mode"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 
