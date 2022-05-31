@@ -41,6 +41,9 @@ sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/l
 sed -i 's/iKoolProxy滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/model/cbi/koolproxy/*.lua
 sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/view/koolproxy/*.htm
 
+# Modify the word to 'luci-app-webadmin'
+sed -i 's/msgstr "Web 管理"/msgstr "Web"/g' feeds/luci/applications/luci-app-webadmin/po/zh-cn/webadmin.po
+
 # Modify the word to 'luci-app-zerotier'
 sed -i 's/firstchild(), "VPN"/firstchild(), "Journey Mode"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 
