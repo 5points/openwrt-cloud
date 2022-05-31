@@ -34,6 +34,9 @@ git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+git clone -b luci https://github.com/xiaorouji/openwrt-passwall luci-passwall
+mv luci-passwall/luci-app-passwall ../lean/openwrt-passwall/
+rm -rf ../lean/luci-passwall
 
 # Add luci-app-passwall2
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
