@@ -95,8 +95,10 @@ git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06-k5.4 te
 # Add netdata
 rm -rf packages/admin/netdata
 rm -rf ../package/lean/luci-app-netdata
-cp -r temp/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
-cp -r temp/packages/admin/netdata packages/admin/netdata
+rm -rf luci/applications/luci-app-netdata 
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata luci/applications/luci-app-netdata
+#cp -r temp/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
+#cp -r temp/packages/admin/netdata packages/admin/netdata
 
 # Add luci-app-smartdns
 cp -r temp/luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
