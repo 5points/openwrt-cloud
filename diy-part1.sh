@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+# Copyright (c) 2019-2022 P3TERX <https://p3terx.com>
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
@@ -34,6 +34,9 @@ git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+
+# Add luci-app-passwall2
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
 
 # Add a Smartinfo to plugin
 svn co https://github.com/KFERMercer/OpenWrt/trunk/package/kferm/luci-app-smartinfo
