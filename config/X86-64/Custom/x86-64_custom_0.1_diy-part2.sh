@@ -37,9 +37,9 @@ sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.
 sed -i 's/TTYD 终端/Terminal/g' feeds/luci/applications/luci-app-ttyd/po/zh-cn/terminal.po
 
 # Modify the word to 'luci-app-ikoolproxy'
-sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/controller/*.lua
-sed -i 's/iKoolProxy滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/model/cbi/koolproxy/*.lua
-sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/gd772/luci-app-ikoolproxy/luasrc/view/koolproxy/*.htm
+sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luasrc/controller/*.lua
+sed -i 's/iKoolProxy滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luasrc/model/cbi/koolproxy/*.lua
+sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luasrc/view/koolproxy/*.htm
 
 # Modify the word to 'luci-app-webadmin'
 sed -i 's/msgstr "Web 管理"/msgstr "Web"/g' feeds/luci/applications/luci-app-webadmin/po/zh-cn/webadmin.po
