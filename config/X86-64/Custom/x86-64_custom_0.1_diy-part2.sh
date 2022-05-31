@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2019-2021 P3TERX <https://p3terx.com>
+# Copyright (c) 2019-2022 P3TERX <https://p3terx.com>
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
@@ -40,25 +40,25 @@ sed -i 's/TTYD 终端/Terminal/g' feeds/luci/applications/luci-app-ttyd/po/zh-cn
 sed -i 's/firstchild(), "VPN"/firstchild(), "Global Server"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 
 # Modify the word to 'luci-app-passwall2'
-sed -i '16a entry({"admin", "vpn"}, firstchild(), "Global Server", 45).dependent = false' package/lean/luci-app-passwall2/luasrc/controller/passwall2.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/controller/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/model/cbi/passwall2/api/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/model/cbi/passwall2/client/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/model/cbi/passwall2/server/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/model/cbi/passwall2/server/api/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/app_update/*.htm
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/auto_switch/*.htm
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/global/*.htm
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/log/*.htm
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/node_list/*.htm
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/rule/*.htm
-sed -i 's/services/vpn/g' package/lean/luci-app-passwall2/luasrc/view/passwall2/server/*.htm
+sed -i '16a entry({"admin", "vpn"}, firstchild(), "Global Server", 45).dependent = false' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/passwall2.lua
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/*.lua
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/api/*.lua
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/client/*.lua
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/server/*.lua
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/server/api/*.lua
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/app_update/*.htm
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/auto_switch/*.htm
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/global/*.htm
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/log/*.htm
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/node_list/*.htm
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/rule/*.htm
+sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/server/*.htm
 
 # Modify the word to 'luci-app-ssr-plus'
-sed -i '12a entry({"admin", "vpn"}, firstchild(), "GFW", 45).dependent = false' package/lean/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-ssr-plus/luasrc/controller/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
-sed -i 's/services/vpn/g' package/lean/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
+sed -i '12a entry({"admin", "vpn"}, firstchild(), "GFW", 45).dependent = false' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
+sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
+sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
 
 # Modify the word to 'Luci-app-poweroff'
 sed -i 's/"吹灯拔蜡，关机回家"/"安全关机，某些机器不能完全断电，关机后只能通过手工重新启动。"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
