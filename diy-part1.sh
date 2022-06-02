@@ -91,7 +91,6 @@ pushd customfeeds
 mkdir temp
 git clone --depth=1 https://github.com/immortalwrt/packages -b openwrt-18.06 temp/packages
 git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06-k5.4 temp/luci
-popd
 
 # Add netdata
 rm -rf packages/admin/netdata
