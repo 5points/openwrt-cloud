@@ -26,7 +26,7 @@ env:
   CONFIG_FILE: config/X86-64/Custom/custom_0.1.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: config/X86-64/Custom/Lean-x86-64_0.1_diy-part2.sh
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
