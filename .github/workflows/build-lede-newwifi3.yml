@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/MIPS/Newifi3/newifi3.config
+  CONFIG_FILE: config/Lean/mips/newifi3/newifi3.config
   DIY_P1_SH: scripts/Lean/Lean-diy1.sh
   DIY_P2_SH: scripts/Lean/Lean_diy2.sh
   UPLOAD_BIN_DIR: false
