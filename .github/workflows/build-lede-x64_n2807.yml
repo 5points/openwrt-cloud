@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+# Copyright (c) 2019-2022 P3TERX <https://p3terx.com>
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
@@ -25,9 +25,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/X86-64/N2807/N2807.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: config/X86-64/x86-64_diy-part2.sh
+  CONFIG_FILE: config/Lean/X86-64/N2807/N2807.config
+  DIY_P1_SH: scripts/Lean/Lean-diy1.sh
+  DIY_P2_SH: scripts/Lean/Lean_diy2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -37,7 +37,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
