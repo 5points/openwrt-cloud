@@ -20,7 +20,7 @@ sed -i "s/OpenWrt/Openwrt by dogecore build $(TZ=UTC-8 date "+%y.%m.%d") @/g" pa
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 
 # Modify default Luci-Theme
-sed -i 's/luci-theme-bootstrap/luci-themes-ATMaterial_CI/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial_ci/g' feeds/luci/collections/luci/Makefile
 
 # Modify default Kernel Version #thanks: https://raw.githubusercontent.com/gd0772/patch/main/gd772.sh
 # Kernel Version Check: https://github.com/coolsnowwolf/lede/blob/master/target/linux/x86/Makefile
