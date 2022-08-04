@@ -6,7 +6,7 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: Lean_custom1.sh
+# File name: Lean_diy2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
