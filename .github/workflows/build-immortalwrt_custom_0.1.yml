@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: openwrt-18.06-k5.4
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/Lean/X86-64/custom/custom_0.1.config
-  DIY_P1_SH: scripts/Lean/Lean-diy1.sh
+  DIY_P1_SH: scripts/immortalwrt/immortalwrt_diy-part1.sh
   DIY_P2_SH: scripts/Lean/Part-0.1/Lean_x86-64_0.1.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
