@@ -6,7 +6,7 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: Lean_x86-64_0.1.sh
+# File name: Lean-newifi3-diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
