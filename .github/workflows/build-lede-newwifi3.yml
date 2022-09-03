@@ -27,7 +27,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/Lean/mips/newifi3/newifi3.config
   DIY_P1_SH: scripts/Lean/Lean-diy1.sh
-  DIY_P2_SH: scripts/Lean/Lean_diy2.sh
+  DIY_P2_SH: scripts/Lean/newifi3/Lean-newifi3-diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
