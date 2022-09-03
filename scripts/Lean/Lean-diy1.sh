@@ -24,8 +24,8 @@ pushd package/lean
 git clone --depth=1 https://github.com/fw876/helloworld
 
 # Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
-rm -rf ../lean/luci-app-kodexplorer
+git clone --depth=1 https://github.com/Lienol/openwrt-package lienol-package
+rm -rf ../lean/lienol-package/luci-app-kodexplorer
 
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
