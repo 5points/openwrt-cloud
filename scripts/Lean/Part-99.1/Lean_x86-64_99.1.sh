@@ -20,7 +20,7 @@ sed -i "s/OpenWrt/Openwrt by dogecore build $(TZ=UTC-8 date "+%y.%m.%d") @/g" pa
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 
 # Modify default Luci-Theme
-sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial_ci/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/collections/luci/Makefile
 
 # Modify default Kernel Version #thanks: https://raw.githubusercontent.com/gd0772/patch/main/gd772.sh
 # Kernel Version Check: https://github.com/coolsnowwolf/lede/blob/master/target/linux/x86/Makefile
@@ -53,7 +53,13 @@ sed -i 's/msgstr "Web 管理"/msgstr "Web"/g' feeds/luci/applications/luci-app-w
 # Modify the word to 'luci-app-vsftpd'
 #sed -i 's/网络存储/存储/g' feeds/luci/applications/luci-app-vsftpd/po/zh-cn/vsftpd.po
 
-# Modify the word to 'luci-app-zerotier'
+# Modify the word to 'luci-app-cifs-mount'
+sed -i 's/挂载 SMB 网络共享/挂载共享/g' feeds/luci/applications/luci-app-cifs-mount/po/zh-cn/cifs.po
+
+# Modify the word to 'luci-app-upnp'
+sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
+
+# Modify the word to 'luci-app-zerotier', 'luci-app-ipsec-server', 'luci-app-softethervpn', 'luci-app-openvpn-server'
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-ipsec-server/luasrc/controller/ipsec-server.lua
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-softethervpn/luasrc/controller/softethervpn.lua
