@@ -27,7 +27,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/Lean/X86-64/N2807/N2807.config
   DIY_P1_SH: scripts/Lean/Lean-diy1.sh
-  DIY_P2_SH: scripts/Lean/Lean_diy2.sh
+  DIY_P2_SH: scripts/Lean/Lean_custom-diy2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
