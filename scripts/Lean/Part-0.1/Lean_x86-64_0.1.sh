@@ -66,7 +66,7 @@ sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-openvpn-server/luasrc/controller/openvpn-server.lua
 
 # Modify the word to 'luci-app-passwall'
-sed -i '18a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/passwall/luci-app-passwall/luasrc/controller/passwall.lua
+sed -i '18a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/luci-app-passwall/luasrc/controller/passwall.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/api/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/client/*.lua
