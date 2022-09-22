@@ -66,7 +66,7 @@ sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-openvpn-server/luasrc/controller/openvpn-server.lua
 
 # Modify the word to 'luci-app-passwall'
-sed -i '18a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = true' package/gd772/passwall/luci-app-passwall/luasrc/controller/passwall.lua
+sed -i '18a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/passwall/luci-app-passwall/luasrc/controller/passwall.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/api/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/client/*.lua
@@ -82,7 +82,7 @@ sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/view/passwall/server/*.htm
 
 # Modify the word to 'luci-app-passwall2'
-sed -i '16a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = true' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/passwall2.lua
+sed -i '16a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/passwall2.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/api/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/client/*.lua
@@ -97,7 +97,7 @@ sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luas
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/server/*.htm
 
 # Modify the word to 'luci-app-ssr-plus'
-sed -i '12a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = true' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+sed -i '12a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
 sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
