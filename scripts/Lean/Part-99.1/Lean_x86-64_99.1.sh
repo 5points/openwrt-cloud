@@ -49,6 +49,8 @@ sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luas
 # Modify the word to 'luci-app-webadmin'
 sed -i 's/msgstr "Web 管理"/msgstr "Web"/g' feeds/luci/applications/luci-app-webadmin/po/zh-cn/webadmin.po
 
+# Modify the word to 'luci-app-unblockneteasemusic' 
+#sed -i 's/解除网易云音乐播放限制/网易云音乐解锁/g' package/lean/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 
 # Modify the word to 'luci-app-vsftpd'
 #sed -i 's/网络存储/存储/g' feeds/luci/applications/luci-app-vsftpd/po/zh-cn/vsftpd.po
