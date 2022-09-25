@@ -94,7 +94,6 @@ git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
 
 # Add netdata
 pushd customfeeds
-rm -rf packages/admin/netdata
 rm -rf luci/applications/luci-app-netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata ../package/lean/luci-app-netdata
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata luci/applications/luci-app-netdata
