@@ -6,12 +6,20 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: Lean_x86-64_99.1.sh
+# File name: Lean_custom-diy2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
 # Modify default IP
 # sed -i 's/192.168.1.1/192.168.99.1/g' package/base-files/files/bin/config_generate
+
+# Modify Default Network Settings Thanks:https://github.com/opalhair/OpenWrt-x86_64-firmware-2/blob/master/diy-part1.sh
+# echo 'Custom settings'
+# sed -i '$i uci set network.lan.ifname="eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan.proto=pppoe' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan6.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
 
 # Display your name on the version
 sed -i "s/OpenWrt/Openwrt by dogecore build $(TZ=UTC-8 date "+%y.%m.%d") @/g" package/lean/default-settings/files/zzz-default-settings
@@ -27,14 +35,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/col
 sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' target/linux/x86/Makefile
 #sed -i 's/KERNEL_TESTING_PATCHVER:=5.18/KERNEL_TESTING_PATCHVER:=5.4/g' target/linux/x86/Makefile
 
-# Modify Default Network Settings Thanks:https://github.com/opalhair/OpenWrt-x86_64-firmware-2/blob/master/diy-part1.sh
-echo 'Custom settings'
-sed -i '$i uci set network.lan.ifname="eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci set network.wan.proto=pppoe' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci set network.wan6.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
-
 # Modify the word to 'luci-admin'
 sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
 
@@ -49,6 +49,9 @@ sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luas
 
 # Modify the word to 'luci-app-webadmin'
 sed -i 's/msgstr "Web 管理"/msgstr "Web"/g' feeds/luci/applications/luci-app-webadmin/po/zh-cn/webadmin.po
+
+# Modify the word to 'luci-app-unblockneteasemusic' 
+#sed -i 's/解除网易云音乐播放限制/网易云音乐解锁/g' package/lean/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 
 # Modify the word to 'luci-app-vsftpd'
 #sed -i 's/网络存储/存储/g' feeds/luci/applications/luci-app-vsftpd/po/zh-cn/vsftpd.po
@@ -66,7 +69,7 @@ sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-openvpn-server/luasrc/controller/openvpn-server.lua
 
 # Modify the word to 'luci-app-passwall'
-#sed -i '18a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/gd772/passwall/luci-app-passwall/luasrc/controller/passwall.lua
+#sed -i '18a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/openwrt-passwall/luci-app-passwall/luasrc/controller/passwall.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/api/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/client/*.lua
@@ -82,7 +85,7 @@ sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall/luci-app-passwall/luasrc/view/passwall/server/*.htm
 
 # Modify the word to 'luci-app-passwall2'
-#sed -i '16a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = true' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/passwall2.lua
+#sed -i '16a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/passwall2.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/api/*.lua
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/model/cbi/passwall2/client/*.lua
@@ -97,16 +100,10 @@ sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luas
 sed -i 's/services/vpn/g' package/lean/openwrt-passwall2/luci-app-passwall2/luasrc/view/passwall2/server/*.htm
 
 # Modify the word to 'luci-app-ssr-plus'
-#sed -i '12a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = true' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+#sed -i '12a entry({"admin", "vpn"}, firstchild(), "Journal", 45).dependent = false' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
 sed -i 's/services/vpn/g' package/lean/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
-
-# Modify the word to 'Luci-app-poweroff'
-sed -i 's/"吹灯拔蜡，关机回家"/"安全关机，某些机器不能完全断电，关机后只能通过手工重新启动。"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-sed -i 's/"关机，走你~"/"执行关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-sed -i 's/"设备有点懵，要等一下..."/"正在执行关机，请稍候"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
-sed -i 's/"正在关机，说啥也不好使了..."/"正在关机"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
 
 # Modify the word to 'Luci-app-poweroff'
 sed -i 's/"吹灯拔蜡，关机回家"/"安全关机，某些机器不能完全断电，关机后只能通过手工重新启动。"/g' package/lean/luci-app-poweroff/po/zh-cn/poweroff.po
