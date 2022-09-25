@@ -87,24 +87,20 @@ git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/package
 git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
 
 # Hook-feeds  Thanks:https://github.com/SuLingGG/OpenWrt-Rpi/blob/main/scripts/hook-feeds.sh
-# pushd customfeeds
-# mkdir temp
-# git clone --depth=1 https://github.com/immortalwrt/packages -b openwrt-18.06 temp/packages
-# git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06-k5.4 temp/luci
+pushd customfeeds
+mkdir temp
+git clone --depth=1 https://github.com/immortalwrt/packages -b openwrt-18.06 temp/immortal-packages
+git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06-k5.4 temp/immortal-luci
 
 # Add netdata
-pushd customfeeds
 rm -rf luci/applications/luci-app-netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata ../package/lean/luci-app-netdata
-#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata luci/applications/luci-app-netdata
-#cp -r temp/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
-#cp -r temp/packages/admin/netdata packages/admin/netdata
 
 # Add luci-app-smartdns
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns luci/applications/luci-app-smartdns
-svn co https://github.com/immortalwrt/packages/trunk/net/smartdns packages/net/smartdns
-#cp -r temp/luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
-#cp -r temp/packages/net/smartdns packages/net/smartdns
+#svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns luci/applications/luci-app-smartdns
+#svn co https://github.com/immortalwrt/packages/trunk/net/smartdns packages/net/smartdns
+cp -r temp/immortal-luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
+cp -r temp/immortal-packages/net/smartdns packages/net/smartdns
 popd
 
 # Set to local feeds
