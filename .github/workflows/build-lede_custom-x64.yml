@@ -26,6 +26,7 @@ env:
   CONFIG_FILE: config/Lean/X86-64/custom/custom_99.1.config
   DIY_P1_SH: scripts/Lean/Lean-diy1.sh
   DIY_P2_SH: scripts/Lean/Part-99.1/Lean_x86-64_99.1.sh
+  DIY_P3_SH: scripts/Lean/Lean_custom-diy2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -79,8 +80,10 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
+        chmod +x $DIY_P3_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        $GITHUB_WORKSPACE/$DIY_P3_SH
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
