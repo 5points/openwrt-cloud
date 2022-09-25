@@ -11,7 +11,15 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.99.1/g' package/base-files/files/bin/config_generate
+# sed -i 's/192.168.1.1/192.168.99.1/g' package/base-files/files/bin/config_generate
+
+# Modify Default Network Settings Thanks:https://github.com/opalhair/OpenWrt-x86_64-firmware-2/blob/master/diy-part1.sh
+# echo 'Custom settings'
+# sed -i '$i uci set network.lan.ifname="eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan.proto=pppoe' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci set network.wan6.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
+# sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
 
 # Display your name on the version
 sed -i "s/OpenWrt/Openwrt by dogecore build $(TZ=UTC-8 date "+%y.%m.%d") @/g" package/lean/default-settings/files/zzz-default-settings
@@ -26,14 +34,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial-ColorIcon/g' feeds/luci/col
 # Kernel Version Check: https://github.com/coolsnowwolf/lede/blob/master/target/linux/x86/Makefile
 sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' target/linux/x86/Makefile
 #sed -i 's/KERNEL_TESTING_PATCHVER:=5.18/KERNEL_TESTING_PATCHVER:=5.4/g' target/linux/x86/Makefile
-
-# Modify Default Network Settings Thanks:https://github.com/opalhair/OpenWrt-x86_64-firmware-2/blob/master/diy-part1.sh
-echo 'Custom settings'
-sed -i '$i uci set network.lan.ifname="eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci set network.wan.proto=pppoe' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci set network.wan6.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
 
 # Modify the word to 'luci-admin'
 sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
