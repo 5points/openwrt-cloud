@@ -42,6 +42,9 @@ sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.
 sed -i 's/TTYD 终端/Terminal/g' feeds/luci/applications/luci-app-ttyd/po/zh-cn/terminal.po
 sed -i 's/\/bin\/login/\/bin\/login -f root/' feeds/packages/utils/ttyd/files/ttyd.config
 
+# Modify the word to 'luci-app-adbyby-plus'
+sed -i 's/广告屏蔽大师 Plus+/adbyby+/g' feeds/luci/applications/luci-app-adbyby-plus/po/zh-cn/adbyby.po
+
 # Modify the word to 'luci-app-ikoolproxy'
 sed -i 's/iKoolProxy 滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luasrc/controller/*.lua
 sed -i 's/iKoolProxy滤广告/ikoolproxy/g' package/lean/luci-app-godproxy/luasrc/model/cbi/koolproxy/*.lua
