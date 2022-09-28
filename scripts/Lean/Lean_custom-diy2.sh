@@ -65,6 +65,23 @@ sed -i 's/挂载 SMB 网络共享/挂载共享/g' feeds/luci/applications/luci-a
 # Modify the word to 'luci-app-upnp'
 sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
 
+# Modfiy luci-app-smartdns 
+# download 'cunstom-config' to smartdns
+wget https://tinyurl.com/Mini-chinalist -O feeds/packages/net/smartdns/smartdns/conf/chinalist.conf
+wget https://tinyurl.com/Skirt-nov6-blist -O feeds/packages/net/smartdns/smartdns/conf/gfwlist.conf
+git clone https://tinyurl.com/lizan143 smartdns-config
+cp -r -v smartdns-config/gfwlist2dnsmasq.sh feeds/packages/net/smartdns/smartdns/conf/gfwlist2dnsmasq.sh
+base64 -d smartdns-config/smartdns-config.conf > feeds/packages/net/smartdns/smartdns/conf/smartdns
+base64 -d smartdns-config/smartdns-custom.conf > feeds/packages/net/smartdns/smartdns/conf/custom.conf 
+rm -rf smartdns-config
+# modify makefile to smartdns
+sed -i '56i \	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist2dnsmasq.sh $(1)/etc/smartdns/gfwlist2dnsmasq.sh' feeds/packages/net/smartdns/smartdns/Makefile
+sed -i '56i \	$(INSTALL_CONF) $(CURDIR)/conf/chinalist.conf $(1)/etc/smartdns/chinalist.conf' feeds/packages/net/smartdns/smartdns/Makefile
+sed -i '56i \	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist.conf $(1)/etc/smartdns/gfwlist.conf' feeds/packages/net/smartdns/smartdns/Makefile
+sed -i '56a \	$(INSTALL_CONF) $(PKG_BUILD_DIR)/package/openwrt/gfwlist2dnsmasq.sh $(1)/etc/smartdns/gfwlist2dnsmasq.sh' feeds/packages/net/smartdns/Makefile
+sed -i '56a \	$(INSTALL_CONF) $(PKG_BUILD_DIR)/package/openwrt/chinalist.conf $(1)/etc/smartdns/chinalist.conf' feeds/packages/net/smartdns/Makefile
+sed -i '56a \	$(INSTALL_CONF) $(PKG_BUILD_DIR)/package/openwrt/gfwlist.conf $(1)/etc/smartdns/gfwlist.conf' feeds/packages/net/smartdns/Makefile
+
 # Modify the word to 'luci-app-zerotier', 'luci-app-ipsec-server', 'luci-app-softethervpn', 'luci-app-openvpn-server'
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 #sed -i 's/firstchild(), "VPN"/firstchild(), "Journal"/g' feeds/luci/applications/luci-app-ipsec-server/luasrc/controller/ipsec-server.lua
