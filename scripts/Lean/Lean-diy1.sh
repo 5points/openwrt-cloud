@@ -99,18 +99,6 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata ../pa
 # Add & Modfiy luci-app-smartdns 
 #svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns luci/applications/luci-app-smartdns
 #svn co https://github.com/immortalwrt/packages/trunk/net/smartdns packages/net/smartdns
-# download 'cunstom-config' to smartdns
-wget https://tinyurl.com/Mini-chinalist -O temp/immortal-packages/net/smartdns/conf/chinalist.conf
-wget https://tinyurl.com/Skirt-nov6-blist -O temp/immortal-packages/net/smartdns/conf/gfwlist.conf
-git clone https://tinyurl.com/lizan143 smartdns-config
-cp -r -v smartdns-config/gfwlist2dnsmasq.sh temp/immortal-packages/net/smartdns/conf/gfwlist2dnsmasq.sh
-base64 -d smartdns-config/smartdns-config.conf > temp/immortal-packages/net/smartdns/conf/smartdns
-base64 -d smartdns-config/smartdns-custom.conf > temp/immortal-packages/net/smartdns/conf/custom.conf 
-rm -rf smartdns-config
-# modify makefile to smartdns
-sed -i '56i \	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist2dnsmasq.sh $(1)/etc/smartdns/gfwlist2dnsmasq.sh' temp/immortal-packages/net/smartdns/Makefile
-sed -i '56i \	$(INSTALL_CONF) $(CURDIR)/conf/chinalist.conf $(1)/etc/smartdns/chinalist.conf' temp/immortal-packages/net/smartdns/Makefile
-sed -i '56i \	$(INSTALL_CONF) $(CURDIR)/conf/gfwlist.conf $(1)/etc/smartdns/gfwlist.conf' temp/immortal-packages/net/smartdns/Makefile
 cp -r temp/immortal-luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
 cp -r temp/immortal-packages/net/smartdns packages/net/smartdns
 popd
