@@ -63,10 +63,14 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
 
 # theme source from https://github.com/kenzok8/openwrt-packages
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-mcat
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-tomato
+
+# theme source from https://github.com/haiibo/openwrt-packages
+svn co https://github.com/haiibo/openwrt-packages/trunk/luci-theme-atmaterial_new
 svn co https://github.com/haiibo/openwrt-packages/trunk/luci-theme-opentomcat
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-tomato
+svn co https://github.com/haiibo/openwrt-packages/trunk/luci-theme-opentomato
 
 popd
 
