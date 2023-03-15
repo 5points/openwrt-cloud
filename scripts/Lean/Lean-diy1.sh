@@ -62,6 +62,9 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
 
+# Add luci-app-wizard
+git clone https://github.com/sirpdboy/luci-app-wizard
+
 # theme source from https://github.com/kenzok8/openwrt-packages
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-mcat
