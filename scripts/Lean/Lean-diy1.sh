@@ -104,11 +104,16 @@ git clone --depth=1 https://github.com/immortalwrt/luci -b openwrt-18.06-k5.4 te
 rm -rf luci/applications/luci-app-netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata ../package/lean/luci-app-netdata
 
-# Add & Modfiy luci-app-smartdns 
+# Add & Modfiy immortal-luci-app-smartdns 
 #svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-smartdns luci/applications/luci-app-smartdns
 #svn co https://github.com/immortalwrt/packages/trunk/net/smartdns packages/net/smartdns
-cp -r temp/immortal-luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
-cp -r temp/immortal-packages/net/smartdns packages/net/smartdns
+#cp -r temp/immortal-luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
+#cp -r temp/immortal-packages/net/smartdns packages/net/smartdns
+
+# Add an original luci-app-smartdns
+rm -rf packages/net/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns.git -b lede ../package/lean/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns.git packages/net/smartdns
 popd
 
 # Set to local feeds
