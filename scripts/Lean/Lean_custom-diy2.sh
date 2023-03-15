@@ -65,6 +65,9 @@ sed -i 's/挂载 SMB 网络共享/挂载共享/g' feeds/luci/applications/luci-a
 # Modify the word to 'luci-app-upnp'
 sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
 
+# Modify the word to 'luci-app-wizard'
+sed -i 's/entry({"admin", "wizard"}, cbi("wizard/entry({"admin", "system", "wizard"}, cbi("system/g' package/lean/luci-app-wizard/luasrc/controller/wizard.lua
+
 # Modfiy luci-app-smartdns 
 # download 'cunstom-config' to smartdns
 #wget https://tinyurl.com/Mini-chinalist -O feeds/packages/net/smartdns/smartdns/conf/chinalist.conf
