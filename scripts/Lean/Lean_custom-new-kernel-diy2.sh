@@ -10,17 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# Modify default IP
-# sed -i 's/192.168.1.1/192.168.99.1/g' package/base-files/files/bin/config_generate
-
-# Modify Default Network Settings Thanks:https://github.com/opalhair/OpenWrt-x86_64-firmware-2/blob/master/diy-part1.sh
-# echo 'Custom settings'
-# sed -i '$i uci set network.lan.ifname="eth1 eth2 eth3"' package/lean/default-settings/files/zzz-default-settings
-# sed -i '$i uci set network.wan.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
-# sed -i '$i uci set network.wan.proto=pppoe' package/lean/default-settings/files/zzz-default-settings
-# sed -i '$i uci set network.wan6.ifname="eth0"' package/lean/default-settings/files/zzz-default-settings
-# sed -i '$i uci commit network' package/lean/default-settings/files/zzz-default-settings
-
 # Display your name on the version
 sed -i "s/OpenWrt/Openwrt by dogecore build $(TZ=UTC-8 date "+%y.%m.%d") @/g" package/lean/default-settings/files/zzz-default-settings
 
@@ -66,7 +55,7 @@ sed -i 's/挂载 SMB 网络共享/挂载共享/g' feeds/luci/applications/luci-a
 sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
 
 # Modify the word to 'luci-app-wizard'
-sed -i 's/entry({"admin", "wizard"}/entry({"admin", "system", "wizard"}/g' package/lean/luci-app-wizard/luasrc/controller/wizard.lua
+#sed -i 's/entry({"admin", "wizard"}/entry({"admin", "system", "wizard"}/g' package/lean/luci-app-wizard/luasrc/controller/wizard.lua
 
 # Modfiy luci-app-smartdns 
 # download 'cunstom-config' to smartdns
