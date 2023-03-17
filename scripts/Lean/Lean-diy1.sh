@@ -62,6 +62,12 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
 
+# Add luci-app-partexp
+git clone https://github.com/sirpdboy/luci-app-partexp
+
+# Add luci-app-netspeedtest
+git clone https://github.com/sirpdboy/NetSpeedTest
+
 # Add luci-app-wizard
 git clone https://github.com/sirpdboy/luci-app-wizard
 
