@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2019-2022 P3TERX <https://p3terx.com>
+# Copyright (c) 2019-2023 P3TERX <https://p3terx.com>
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
@@ -61,6 +61,7 @@ git clone https://github.com/project-lede/luci-app-godproxy.git
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/esirplayground/luci-app-poweroff.git
+git clone https://github.com/sirpdboy/luci-app-poweroffdevice.git
 
 # Add luci-app-partexp
 git clone https://github.com/sirpdboy/luci-app-partexp
